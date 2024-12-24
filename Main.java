@@ -143,12 +143,25 @@ class Quad{
     public static void main(String[] args) {
         Scanner userInput=new Scanner(System.in);
         System.out.print("Enter the first number : ");
-        int a=userInput.nextInt();
+        double a=userInput.nextInt();
         System.out.print("Enter the second number : ");
-        int b=userInput.nextInt();
+        double b=userInput.nextInt();
         System.out.print("Enter the third number : ");
-        int c=userInput.nextInt();
-        
+        double c=userInput.nextInt();
+        double discriminant= b*2-4*a*c;
+        if(discriminant>0){                       //-b + math.sqrt(discriminant)/2*a
+           double root1= (-b + Math.sqrt(discriminant))/(2*a);     //-b - math.sqrt(discriminant)/2*a
+           double root2= (-b + Math.sqrt(discriminant))/(2*a);
+           System.out.println(root1+" "+ root2);
+        }else if(discriminant==0){
+            double root=-b/(a*2);
+            System.out.println(root);
+        }else{
+            double real=-b /(2*a);
+        double imaginary=Math.sqrt(-discriminant)/(2*a);
+        System.out.format("root1 =%.2f + %.2fi",real,imaginary);
+        System.out.format("\n root1 =%.2f - %.2fi",real,imaginary);
+        }
     }
 }
 
@@ -226,7 +239,3 @@ class Triangle{
     }
 }
 
-
-class Demo{
-    
-}
